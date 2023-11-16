@@ -1,9 +1,5 @@
 const {Schema,model} =require('mongoose');
 const UsuarioSchema = Schema({
-    // usuario:{
-    //     type:String,
-    //     required:[true, "El usuario es obligatorio"]
-    // },
     nombre:{
         type:String,
         required:[true, "El nombre es obligatorio"]
@@ -26,7 +22,7 @@ const UsuarioSchema = Schema({
     },
     activo:{
         type:Boolean,
-        default: true
+        default: false
     }
 })
 UsuarioSchema.methods.toJSON = function () {

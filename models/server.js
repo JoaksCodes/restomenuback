@@ -5,10 +5,11 @@ const { dbConnection } = require('../database/config')
 class Server {
     constructor() {
         this.app = express()
-        this.port = 3000 || process.env.PORT;
+        this.port = 8081 || process.env.PORT;
         this.usuarios_path = "/api/users"
         this.products_path = "/api/products" 
         this.auth_path = "/api/auth"
+        this.order_path = "/api/order"
         this.conectDb()
         this.middlewares()
         this.routes()
@@ -25,6 +26,7 @@ class Server {
         this.app.use(this.usuarios_path, require('../routes/usuarios'))
         this.app.use(this.products_path, require('../routes/products'))
         this.app.use(this.auth_path, require('../routes/auth'))
+        this.app.use(this.order_path, require('../routes/order'))
     }
     listen() {
         this.app.listen(this.port, () => {

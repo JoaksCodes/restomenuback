@@ -58,25 +58,10 @@ const del = async (req, res) => {
     }
 }
 
-const search = async (req, res) => {
-    const { busqueda } = req.query
-    let busquedaMin = busqueda.toLowerCase();
-    // let filtro = { likes: { $in: [busqueda, busquedaMin] } }
-    const productos = await Producto.find( )
-    let productosconseguidos = []
-    for (let index = 0; index < productos.length; index++) {
-        if ((productos[index].name).toLowerCase().includes(busqueda)) {
-            productosconseguidos = [...productosconseguidos, productos[index]]
-        }        
-    }
-    res.json({ productosconseguidos })
-}
-
 module.exports = {
     index,
     getOne,
     update,
     create,
-    del,
-    search
+    del
 }
