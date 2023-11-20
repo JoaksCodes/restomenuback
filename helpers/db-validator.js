@@ -4,7 +4,7 @@ const esAdmin=async(id)=>{
     const user = await Usuario.findOne({_id:id});
     if (!user.admin) {
         throw new Error("El usuario no es administrador");
-        // return "El usuario no es administrador"
+        return "El usuario no es administrador"
     }
 
 }

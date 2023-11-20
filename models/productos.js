@@ -22,7 +22,7 @@ const ProductosSchema = Schema({
     },
     activo: {
         type: Boolean,
-        default: false
+        required: [true, "Debe indicar si lo quiere publicar o no"]
     }
 });
 
