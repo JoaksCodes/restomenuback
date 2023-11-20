@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 const usersController = require('../controllers/usersController');
-const { validarCampos } = require('../middlewares/validar_campos');
+const { validarCampos } = require('../middlewares/validate');
 const { usuarioExiste,esAdmin } = require('../helpers/db-validator');
 const { check } = require('express-validator');
 
