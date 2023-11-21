@@ -15,7 +15,11 @@ class Server {
         this.routes()
     }
     async conectDb() {
-        await dbConnection()
+        try {
+           return await dbConnection()
+        } catch (error) {
+            throw new Error("No se pudo iniciar la base de datos",error)
+        }
     }
     middlewares() {
         this.app.use(cors())
